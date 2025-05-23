@@ -4,13 +4,12 @@ import { FiGithub, FiTwitter, FiLinkedin, FiMail, FiYoutube } from 'react-icons/
 
 const Footer = () => {
   const year = new Date().getFullYear()
-  const isLoggedIn = !!localStorage.getItem('token') // Replace with context or auth hook if available
+  const isLoggedIn = !!localStorage.getItem('token')
 
   return (
     <footer className="bg-white border-t border-gray-200 mt-10">
       <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Logo and description */}
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center mb-4">
               <span className="text-xl font-bold text-primary-500">BlogHub</span>
@@ -20,7 +19,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick links */}
           <div>
             <h3 className="font-semibold text-gray-800 mb-4">Quick Links</h3>
             <ul className="space-y-2">
@@ -42,8 +40,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
-          {/* Connect */}
           <div>
             <h3 className="font-semibold text-gray-800 mb-4">Connect To Author</h3>
             <div className="flex space-x-4 mb-4">

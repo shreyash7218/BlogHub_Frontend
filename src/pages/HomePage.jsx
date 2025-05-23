@@ -59,7 +59,7 @@ const HomePage = () => {
       case 'title':
         return [...posts].sort((a, b) => a.title.localeCompare(b.title))
       case 'popular':
-        return posts // Placeholder: sort by views or likes
+        return posts
       default:
         return [...posts].sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
     }
@@ -75,7 +75,6 @@ const HomePage = () => {
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
       <section className="bg-gray-50 py-12 mb-8">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-8">
@@ -95,18 +94,13 @@ const HomePage = () => {
 
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Main Content */}
           <div className="lg:w-3/4">
-            {/* Category Filter */}
             <div className="mb-8">
               <CategoryFilter 
-                // showAll={showAllCategories}
-                // onToggle={() => setShowAllCategories(!showAllCategories)}
               />
               
             </div>
 
-            {/* Search Info */}
             {searchParam && (
               <div className="mb-6">
                 <h2 className="text-xl font-semibold text-gray-800">
@@ -115,14 +109,12 @@ const HomePage = () => {
               </div>
             )}
 
-            {/* Error */}
             {error && (
               <div className="bg-red-100 text-red-700 p-4 rounded-md mb-6">
                 {error}
               </div>
             )}
 
-            {/* Loading or Posts */}
             {loading ? (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[...Array(6)].map((_, index) => (
@@ -167,7 +159,6 @@ const HomePage = () => {
             )}
           </div>
 
-          {/* Sidebar */}
           <div className="lg:w-1/4">
             <NewPosts />
           </div>

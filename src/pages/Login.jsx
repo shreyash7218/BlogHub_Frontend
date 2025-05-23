@@ -14,7 +14,6 @@ const Login = () => {
   const navigate = useNavigate()
   const location = useLocation()
   
-  // Get redirect destination if we were redirected to login page
   const from = location.state?.from?.pathname || '/'
   
   const handleSubmit = async (e) => {

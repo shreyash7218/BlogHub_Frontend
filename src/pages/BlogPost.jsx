@@ -48,7 +48,7 @@ const BlogPost = () => {
     }
   }
   
-  // Render loading state
+  //loading state
   if (loading) {
     return (
       <div className="container mx-auto px-4 py-20">
@@ -67,7 +67,7 @@ const BlogPost = () => {
     )
   }
   
-  // Render error state
+  //error state
   if (error) {
     return (
       <div className="container mx-auto px-4 py-20">
@@ -82,14 +82,13 @@ const BlogPost = () => {
     )
   }
   
-  // Render post content
+  //post content
   const isAuthor = user && post?.user_id === user.id
   const formattedDate = format(new Date(post.created_at), 'MMMM dd, yyyy')
   
   return (
     <div className="container mx-auto px-4 py-20">
       <article className="max-w-3xl mx-auto">
-        {/* Post Header */}
         <header className="mb-8">
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             {post.title}
@@ -119,7 +118,6 @@ const BlogPost = () => {
             )}
           </div>
           
-          {/* Author Actions */}
           {isAuthor && (
             <div className="flex space-x-4 mb-8">
               <Link
@@ -139,7 +137,6 @@ const BlogPost = () => {
             </div>
           )}
           
-          {/* Featured Image */}
           {post.featured_image && (
             <div className="mb-8">
               <img
@@ -151,7 +148,6 @@ const BlogPost = () => {
           )}
         </header>
         
-        {/* Post Content */}
         <div 
           className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-a:text-primary-600 prose-a:hover:text-primary-800"
           dangerouslySetInnerHTML={{ __html: post.content }} 

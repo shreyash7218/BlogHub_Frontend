@@ -11,7 +11,7 @@ const NewPosts = () => {
   useEffect(() => {
     const fetchLatestPosts = async () => {
       try {
-        const response = await getAllPosts(1, 5); // Get latest 5 posts
+        const response = await getAllPosts(1, 5);
         setPosts(response.posts);
       } catch (error) {
         console.error("Failed to fetch latest posts:", error);

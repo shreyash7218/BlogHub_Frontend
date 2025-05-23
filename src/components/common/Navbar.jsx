@@ -12,7 +12,7 @@ const Navbar = () => {
   const location = useLocation()
   const navigate = useNavigate()
 
-  // Close mobile menu when route changes
+  // Close mobile menu
   useEffect(() => {
     setIsOpen(false)
   }, [location])
@@ -46,14 +46,11 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          {/* Logo */}
           <Link to="/" className="flex items-center">
-            <span className="text-xl font-bold text-primary-500">BlogHub</span>
+            <span className="text-4xl font-bold text-primary-500">BlogHub</span>
           </Link>
           
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
-            {/* Search Bar */}
             <form onSubmit={handleSearch} className="relative">
               <input
                 type="text"
@@ -91,7 +88,6 @@ const Navbar = () => {
             )}
           </div>
           
-          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700 focus:outline-none">
               {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -99,7 +95,6 @@ const Navbar = () => {
           </div>
         </div>
         
-        {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden mt-4 bg-white rounded-lg shadow-lg p-4 animate-slide-up">
             <form onSubmit={handleSearch} className="relative mb-4">

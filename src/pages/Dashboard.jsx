@@ -22,16 +22,13 @@ const Dashboard = () => {
   const { user } = useAuth();
   const location = useLocation();
 
-  // Set message from navigation state
   useEffect(() => {
     if (location.state?.message) {
       setMessage(location.state.message);
-      // Clear the message from location state
       window.history.replaceState({}, document.title);
     }
   }, [location.state]);
 
-  // Fetch user's posts
   useEffect(() => {
     const fetchUserPosts = async () => {
       try {
@@ -67,7 +64,6 @@ const Dashboard = () => {
     }
   };
 
-  // Truncate title for display
   const truncateTitle = (title, maxLength = 60) => {
     if (title.length <= maxLength) return title;
     return title.substring(0, maxLength).trim() + "...";
@@ -75,7 +71,6 @@ const Dashboard = () => {
 
   return (
     <div className="pt-20">
-      {/* User Profile Section */}
 
       <div className="bg-white rounded-lg shadow-md p-6 mb-8">
         <div className="flex items-center space-x-4">
@@ -91,8 +86,6 @@ const Dashboard = () => {
             <p className="text-gray-600">{user?.email}</p>
 
             <p className="text-sm text-gray-500">
-              {/* 
-              Member since {format(new Date(user?.created_at), 'MMMM yyyy')} */}
             </p>
           </div>
         </div>
@@ -118,7 +111,6 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Messages */}
       {message && (
         <div className="bg-green-100 p-4 rounded-md flex items-center mb-6">
           <FiCheckCircle className="text-green-600 mr-3 flex-shrink-0" />
@@ -133,7 +125,6 @@ const Dashboard = () => {
         </div>
       )}
 
-      {/* Loading State */}
       {loading ? (
         <div className="animate-pulse space-y-4">
           {[...Array(3)].map((_, index) => (
@@ -232,8 +223,6 @@ const Dashboard = () => {
                         <td className="px-6 py-4 whitespace-nowrap">
                           {post.category?.name || "Uncategorized"}
                         </td>
-
-                        {/* 🛠️ FIXED: Format date safely after converting to ISO format */}
                         <td className="px-6 py-4 whitespace-nowrap text-gray-500">
                           {post.created_at
                             ? format(

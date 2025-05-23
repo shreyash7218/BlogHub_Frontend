@@ -67,34 +67,6 @@ const SearchBar = ({ initialQuery = "", onSearch }) => {
         </div>
 
         <div className="flex gap-4">
-          <select
-            value={filters.category}
-            onChange={(e) =>
-              setFilters({ ...filters, category: e.target.value })
-            }
-            className="px-5 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white"
-          >
-            <option value="all">All Categories</option>
-            <option value="technology">Technology</option>
-            <option value="health-wellness">Health & Wellness</option>
-            <option value="travel">Travel</option>
-            <option value="food">Food</option>
-            <option value="finance">Finance</option>
-            <option value="education">Education</option>
-            <option value="lifestyle">Lifestyle</option>
-            <option value="entertainment">Entertainment</option>
-            <option value="career">Career</option>
-            <option value="diy-crafts">DIY & Crafts</option>
-            <option value="science">Science</option>
-            <option value="environment">Environment</option>
-            <option value="sports">Sports</option>
-            <option value="books-literature">Books & Literature</option>
-            <option value="gaming">Gaming</option>
-            <option value="politics">Politics</option>
-            <option value="photography">Photography</option>
-            <option value="business">Business</option>
-            <option value="history">History</option>
-          </select>
 
           <select
             value={filters.sortBy}

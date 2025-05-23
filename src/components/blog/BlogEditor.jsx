@@ -58,7 +58,7 @@ const BlogEditor = ({ initialData = {}, onSubmit, submitButtonText = 'Submit' })
         featured_image: featuredImage
       }
       
-      // Pass data to parent component's submit handler
+      // Pass data to parent component's
       await onSubmit(postData)
     } catch (error) {
       setError(error.message || 'Failed to save post. Please try again.')

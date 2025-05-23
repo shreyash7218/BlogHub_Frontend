@@ -21,7 +21,7 @@ const BlogCard = ({ post }) => {
     return strippedContent.substring(0, maxLength).trim() + '...'
   }
 
-  // Safely format date
+  //format date
   let formattedDate = 'Unknown date'
   if (created_at) {
     const date = new Date(created_at)
