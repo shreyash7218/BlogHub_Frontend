@@ -21,7 +21,7 @@ React Context was used to manage user authentication state, while Axios handled 
 - Responsive Design:
 Using Tailwind CSS, I ensured the application looked great on both mobile and desktop. The design was kept minimal to prioritize readability and ease of navigation.
 
-Search and Filtering:
+- Search and Filtering:
 I implemented frontend-based search functionality using dynamic filtering across blog post titles and content, and added category-based filters for better content discovery.
 
 ## 🚀 Features
